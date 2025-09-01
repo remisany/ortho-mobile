@@ -1,0 +1,1 @@
+export type TWorldColor = {light: string, dark: string}
