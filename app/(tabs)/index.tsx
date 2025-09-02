@@ -1,27 +1,21 @@
-import { StyleSheet } from 'react-native';
 //import components
 import ButtonGame from '@/components/ButtonGame';
 import { ThemedView } from '@/components/ThemedView';
 //import constants
 import { worldColors } from '@/constants/Colors';
+import { useRouter } from 'expo-router';
 
 export default function HomeScreen() {
+  const router = useRouter();
+
   return (
-    <ThemedView style={styles.container}>    
+    <ThemedView>    
 
       <ButtonGame
-        onPress={() => {}}
+        onPress={() => router.push("/intruder")}
         color={worldColors.beach}
       />
 
     </ThemedView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-});
