@@ -1,5 +1,13 @@
-import { TPairList } from "@/constants/Definitions";
+//import constants
+import { TIcons } from "@/constants/Definitions";
 
-export const intruderPairList: TPairList = [
-    ['', '']
-];
+export const icons: TIcons = [
+    {
+        url: require("@/assets/images/beach/cocktail.png"),
+        mirrorY: true
+    },
+    {
+        url: require("@/assets/images/beach/coconut-drink.png"),
+        mirrorY: true
+    }
+]

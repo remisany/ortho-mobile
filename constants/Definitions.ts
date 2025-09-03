@@ -1,4 +1,9 @@
 export type TWorldColor = {light: string, dark: string}
 
-export type TPair = string[];
-export type TPairList = TPair[];
+export type TIcon = {
+    url: string,
+    mirrorY?: boolean,
+    mirrorX?: boolean,
+}
+
+export type TIcons = TIcon[];
