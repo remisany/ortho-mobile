@@ -7,3 +7,6 @@ export type TIcon = {
 }
 
 export type TIcons = TIcon[];
+
+export type TUrl = '/intruder/pair';
+export type THref = '/'

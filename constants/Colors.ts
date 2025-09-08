@@ -14,6 +14,14 @@ export const Colors = {
 };
 
 export const worldColors = {
+  light: {
+    light: Colors.light.background,
+    dark: Colors.light.border
+  },
+  dark: {
+    light: Colors.dark.background,
+    dark: Colors.dark.border
+  },
   beach: {
     light: '#FFD15E',
     dark: '#EEBB4C',

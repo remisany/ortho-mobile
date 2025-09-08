@@ -1,11 +1,9 @@
-import { Image } from 'expo-image';
-import { useMemo } from 'react';
-import { StyleSheet } from 'react-native';
-//import components
 import { ThemedView } from "@/components/ThemedView";
 import { containerPadding, iconMargin, iconSize } from '@/constants/common';
 import { intruderPairGame } from '@/lib/game/intruder';
-//import lib
+import { Image } from 'expo-image';
+import { useMemo } from 'react';
+import { StyleSheet } from 'react-native';
 
 export default function IntruderPairScreen() {
   const {length, index, common, find} = useMemo(() => intruderPairGame(), []);
