@@ -1,10 +1,10 @@
 import Instruction from '@/components/Instruction';
-import { intruderInstructionFR } from '@/constants/instruction';
+import { intruder } from '@/locales/fr/instruction';
 
 export default function InstructionPairScreen() {
     return (
         <Instruction
-            instruction={intruderInstructionFR.pair}
+            instruction={intruder.pair}
             url='/intruder/pair'
         />
     )

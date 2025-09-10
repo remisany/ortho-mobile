@@ -8,7 +8,7 @@ export default function IntruderScreen() {
   const router = useRouter();
   
   useEffect(() => {
-    router.push("/intruder/pair/instruction")
+    router.replace('/intruder/pair/instruction')
   }, [])
 
   return (

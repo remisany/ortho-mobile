@@ -12,7 +12,8 @@ import { useColorScheme } from '@/hooks/useColorScheme';
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    MPlus: require('../assets/fonts/MPLUSRounded1c-Regular.ttf'),
+    MPlusBold: require('../assets/fonts/MPLUSRounded1c-Bold.ttf'),
   });
 
   const isDark = colorScheme === 'dark';
@@ -29,14 +30,14 @@ export default function RootLayout() {
         <Stack
           screenOptions={{
             headerShown: false,
-            animation: "fade_from_bottom"
+            animation: 'fade_from_bottom'
           }}
         >
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="+not-found" />
+          <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
+          <Stack.Screen name='+not-found' />
         </Stack>
         <View style={{ backgroundColor: theme.colors.background }}>
-          <StatusBar style="auto"/>
+          <StatusBar style='auto'/>
         </View>
       </View>
     </ThemeProvider>

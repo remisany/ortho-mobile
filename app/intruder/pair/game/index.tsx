@@ -1,5 +1,5 @@
-import { ThemedView } from "@/components/ThemedView";
-import { containerPadding, iconMargin, iconSize } from '@/constants/common';
+import { ThemedView } from '@/components/ThemedView';
+import { iconMargin, iconSize, marginS } from '@/constants/Common';
 import { intruderPairGame } from '@/lib/game/intruder';
 import { Image } from 'expo-image';
 import { useMemo } from 'react';
@@ -20,7 +20,7 @@ export default function IntruderPairScreen() {
             key={i}
             style={[styles.image, style]}
             source={source}
-            contentFit="contain"
+            contentFit='contain'
           />
         )
       })}
@@ -31,9 +31,9 @@ export default function IntruderPairScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    alignContent: "center",
+    alignContent: 'center',
     flexWrap: 'wrap',
-    padding: containerPadding,
+    padding: marginS,
   },
   image: {
     width: iconSize,

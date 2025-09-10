@@ -11,6 +11,7 @@ type IoniconsName = ComponentProps<typeof Ionicons>['name'];
 interface IIcon {
   color: string;
   size?: number;
+  solid?: boolean
 } 
 
 interface IMaterialIcon extends IIcon {
@@ -39,10 +40,11 @@ export function Icon({
   name,
   color,
   size = 24,
-  type = 'material'
+  type = 'material',
+  solid = false
 }: TIcon) {
-  if (type === 'fontAwesome') return <FontAwesome6 name={name} size={size} color={color} />
-  if (type === 'ionicons') return <Ionicons name={name} size={size} color={color} />
+  if (type === 'fontAwesome') return <FontAwesome6 name={name} size={size} color={color} solid={solid}/>
+  if (type === 'ionicons') return <Ionicons name={name} size={size} color={color}/>
 
   return <MaterialIcons name={name} size={size} color={color} />;
 }

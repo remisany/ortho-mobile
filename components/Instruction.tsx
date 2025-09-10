@@ -3,8 +3,10 @@ import Header from '@/components/Header';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { worldColors } from '@/constants/Colors';
-import { btnHeight, margin } from '@/constants/common';
+import { btnHeight, fontSizeS, fontSizeText, marginL } from '@/constants/Common';
 import { TUrl } from '@/constants/Definitions';
+import { button } from '@/locales/fr/button';
+import { title } from '@/locales/fr/title';
 import { useRouter } from 'expo-router';
 import { useMemo } from 'react';
 import { StyleSheet, useColorScheme } from 'react-native';
@@ -24,25 +26,25 @@ export default function Instruction({ url, instruction }: IInstruction) {
 
   const content = useMemo(() => (
     <ThemedText style={styles.text}>
-      commencer
+      {button.begin}
     </ThemedText>
   ), [])
   
   return (
     <ThemedView>
       <Header
-        href='/'
+        title={title.instruction}
       />
 
-      <ThemedText>
+      <ThemedText style={styles.instruction}>
         {instruction}
       </ThemedText>
 
       <ButtonCommon
         color={color}
-        onPress={() => router.push(`${url}/game`)}
+        onPress={() => router.replace(`${url}/game`)}
         content={content}
-        stylesPressable={[styles.pressable, {bottom: insets.bottom + margin}]}
+        stylesPressable={[styles.pressable, {bottom: insets.bottom + marginL}]}
         stylesFront={{borderColor: color.dark, borderWidth: 2}}
       />
     </ThemedView>
@@ -53,11 +55,17 @@ const styles = StyleSheet.create({
   text: {
     textTransform: 'uppercase',
     textAlign: 'center',
-    width: '100%'
+    width: '100%',
+    fontFamily: 'MPlusBold',
+    fontSize: fontSizeS,
   },
   pressable: {
     width: '70%',
     height: btnHeight,
     position: 'absolute',
+  },
+  instruction: {
+    fontSize: fontSizeText,
+    fontFamily: 'MPlus'
   }
 });
