@@ -2,7 +2,6 @@
 import ButtonGame from '@/components/ButtonGame';
 import { ThemedView } from '@/components/ThemedView';
 //import constants
-import { worldColors } from '@/constants/Colors';
 import { useRouter } from 'expo-router';
 
 export default function HomeScreen() {
@@ -13,7 +12,6 @@ export default function HomeScreen() {
 
       <ButtonGame
         onPress={() => router.push("/intruder")}
-        color={worldColors.beach}
       />
 
     </ThemedView>

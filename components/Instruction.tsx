@@ -1,71 +1,57 @@
-import ButtonCommon from '@/components/ButtonCommon';
-import Header from '@/components/Header';
+import ButtonText from '@/components/ButtonText';
 import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-import { worldColors } from '@/constants/Colors';
-import { btnHeight, fontSizeS, fontSizeText, marginL } from '@/constants/Common';
+import { btnHeight, fontSizeL, fontSizeText, marginL, marginM, marginS } from '@/constants/Common';
 import { TUrl } from '@/constants/Definitions';
 import { button } from '@/locales/fr/button';
 import { title } from '@/locales/fr/title';
 import { useRouter } from 'expo-router';
-import { useMemo } from 'react';
-import { StyleSheet, useColorScheme } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { StyleSheet } from 'react-native';
 
 interface IInstruction {
-  url: TUrl
-  instruction: string
+  url: TUrl,
+  instruction: string,
 }
 
 export default function Instruction({ url, instruction }: IInstruction) {
-  const insets = useSafeAreaInsets();
-  const colorScheme = useColorScheme();
   const router = useRouter();
-
-  const color = useMemo(() => worldColors[colorScheme ?? 'light'], [colorScheme])
-
-  const content = useMemo(() => (
-    <ThemedText style={styles.text}>
-      {button.begin}
-    </ThemedText>
-  ), [])
   
   return (
-    <ThemedView>
-      <Header
-        title={title.instruction}
-      />
-
+    <>
+      <ThemedText style={styles.title}>
+        {title.instruction}
+      </ThemedText>
+          
       <ThemedText style={styles.instruction}>
         {instruction}
       </ThemedText>
 
-      <ButtonCommon
-        color={color}
+      <ButtonText
         onPress={() => router.replace(`${url}/game`)}
-        content={content}
-        stylesPressable={[styles.pressable, {bottom: insets.bottom + marginL}]}
-        stylesFront={{borderColor: color.dark, borderWidth: 2}}
-      />
-    </ThemedView>
+        stylesPressable={styles.pressable}
+        text={button.begin}
+      >
+      </ButtonText>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  text: {
-    textTransform: 'uppercase',
-    textAlign: 'center',
-    width: '100%',
-    fontFamily: 'MPlusBold',
-    fontSize: fontSizeS,
+  instruction: {
+    fontSize: fontSizeText,
+    fontFamily: 'MPlus',
+    marginBottom: marginL + btnHeight
   },
   pressable: {
     width: '70%',
-    height: btnHeight,
+    bottom: marginL,
     position: 'absolute',
   },
-  instruction: {
-    fontSize: fontSizeText,
-    fontFamily: 'MPlus'
+  title: {
+    position: 'absolute',
+    top: 0,
+    left: marginS,
+    padding: marginM,
+    fontSize: fontSizeL,
+    fontFamily: 'MPlusBold',
   }
 });

@@ -6,8 +6,9 @@ export const btnHeight = 65;
 export const marginS = 5;
 export const marginM = 10;
 export const marginL = 15;
+export const marginXL = 20;
 
-export const heightTopBar = 60;
+export const heightTopBar = 50;
 
 export const fontSizeL = 30;
 export const fontSizeM = 20;

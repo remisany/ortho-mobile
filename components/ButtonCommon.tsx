@@ -1,5 +1,5 @@
 import { TWorldColor } from "@/constants/Definitions";
-import React, { JSX } from "react";
+import React, { ReactElement } from "react";
 import { Pressable, StyleSheet, View, ViewStyle } from "react-native";
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from "react-native-reanimated";
 
@@ -8,10 +8,10 @@ interface IButtonCommon {
   color: TWorldColor,
   stylesPressable?: ViewStyle | ViewStyle[],
   stylesFront?: ViewStyle,
-  content: JSX.Element
+  children: ReactElement
 }
 
-export default function ButtonCommon({ onPress, color, stylesFront, stylesPressable, content }: IButtonCommon) {    
+export default function ButtonCommon({ onPress, color, stylesFront, stylesPressable, children }: IButtonCommon) {    
     const offset = useSharedValue(-4);
 
     const animatedFront = useAnimatedStyle(() => ({
@@ -28,7 +28,7 @@ export default function ButtonCommon({ onPress, color, stylesFront, stylesPressa
             <Animated.View style={[styles.shadow]} />
             <View style={[styles.edge, {backgroundColor: color.dark}]} />
             <Animated.View style={[styles.front, animatedFront, {backgroundColor: color.light}, stylesFront]}>
-              {content}
+              {children}
             </Animated.View>
         </Pressable>
     );

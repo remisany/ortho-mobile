@@ -1,6 +1,8 @@
+import { TColors } from "@/constants/Definitions";
+
 export const White = '#ffffff';
 
-export const Colors = {
+export const Colors: TColors = {
   light: {
     text: '#4b4b4b',
     background: White,
