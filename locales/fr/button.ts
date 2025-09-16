@@ -1,3 +1,4 @@
 export const button = {
-    begin: "commencer" 
+    begin: "commencer",
+    end: "terminer"
 }

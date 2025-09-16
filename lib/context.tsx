@@ -1,5 +1,5 @@
-import { TLife, TSetter, TWorld } from "@/constants/Definitions";
-import { initialLife, initialWorld } from "@/constants/Initial";
+import { TLife, TProgression, TSetter, TWorld } from "@/constants/Definitions";
+import { initialLife, initialProgression, initialWorld } from "@/constants/Initial";
 import { createContext, FC, ReactNode, useContext, useState } from "react";
 
 interface ProviderProps { children: ReactNode }
@@ -35,3 +35,19 @@ export const WorldProvider: FC<ProviderProps> = ({ children }) => {
 }
 
 export const useWorld = (): TWorldContext => useContext(WorldContext as React.Context<TWorldContext>);
+
+//PROGRESSION CONTEXT
+type TProgressionContext = [TProgression, TSetter<TProgression>];
+const ProgressionContext = createContext<TProgressionContext | undefined>(undefined);
+
+export const ProgressionProvider: FC<ProviderProps> = ({ children }) => {
+    const [state, dispatch] = useState<TProgression>(initialProgression);
+
+    return (
+        <ProgressionContext.Provider value={[state, dispatch]}>
+            {children}
+        </ProgressionContext.Provider>
+    )
+}
+
+export const useProgression = (): TProgressionContext => useContext(ProgressionContext as React.Context<TProgressionContext>);

@@ -1,20 +1,21 @@
 import { ThemedView } from '@/components/ThemedView';
 import Header from '@/components/header/Header';
+import { ProgressionProvider } from '@/lib/context';
 import { Slot } from 'expo-router';
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
 export default function GameLayout() {
-    const [correction] = useState();
-
     return (
-        <ThemedView>
-            <Header/>
+        <ProgressionProvider>
+            <ThemedView>
+                <Header/>
 
-            <View style={styles.container}>
-                <Slot/>
-            </View>
-        </ThemedView>
+                <View style={styles.container}>
+                    <Slot/>
+                </View>
+            </ThemedView>
+        </ProgressionProvider>
     )
 }
 

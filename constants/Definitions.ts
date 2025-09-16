@@ -29,10 +29,8 @@ export type THref = '/'
 //CONTEXT
 export type TSetter<T> = Dispatch<SetStateAction<T>>;
 
-export type TProgression = {current: number, last: number};
-
 export type TLife = number;
 
-export type TCorrection = number;
+export type TProgression = {correct: number, progress: number, all: number};
 
 export type TWorld = keyof typeof worldColors;

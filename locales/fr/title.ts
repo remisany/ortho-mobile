@@ -1,3 +1,4 @@
 export const title = {
-    instruction: "Consigne" 
+    instruction: "Consigne",
+    result: "Résultat",
 }

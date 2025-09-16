@@ -1,9 +1,8 @@
 import { worldColors } from '@/constants/Colors';
 import { marginL, marginM, marginXL } from '@/constants/Common';
 import { TColor } from '@/constants/Definitions';
-import { initialProgression } from '@/constants/Initial';
-import { useWorld } from '@/lib/context';
-import { useEffect, useMemo, useState } from 'react';
+import { useProgression, useWorld } from '@/lib/context';
+import { useMemo } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 interface IProgression {
@@ -11,18 +10,15 @@ interface IProgression {
 }
 
 export default function Progression({ color }: IProgression) {
-  const [progression] = useState(initialProgression);
+  const [progression] = useProgression();
   const [world] = useWorld();
 
   const width = useMemo(() => {
-    const {current, last} = progression;
-    const width = Math.round(current/last*100);
+    const {progress, all} = progression;
+    const width = Math.min(Math.round(progress/all*100), 100);
     return width;
   }, [progression])
 
-  useEffect(() => {
-    console.log("ok")
-  }, [])
 
   return (
     <View style={[styles.container, {backgroundColor: color.border}]}>
