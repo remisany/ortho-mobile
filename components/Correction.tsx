@@ -23,7 +23,6 @@ export default function Correction() {
     const correction = Math.round(correct/(all-1)*100);
     return `${correction}%`;
   }, [progression])
-
   
   return (
     <>

@@ -9,6 +9,17 @@ import { Platform } from 'react-native';
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
+  // useEffect(() => {
+  //   if (Platform.OS === "android") {
+  //     NavigationBar.setBackgroundColorAsync(
+  //       Colors[colorScheme ?? "light"].background
+  //     );
+  //     NavigationBar.setButtonStyleAsync(
+  //       colorScheme === "dark" ? "light" : "dark"
+  //     );
+  //   }
+  // }, [colorScheme]);
+
   return (
     <Tabs
       screenOptions={{

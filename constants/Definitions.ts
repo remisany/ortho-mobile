@@ -7,7 +7,8 @@ export type TColor = {
     text: string,
     background: string,
     border: string,
-    red: string
+    red: string,
+    backgroundHide: string
 }
 
 export type TColors = {

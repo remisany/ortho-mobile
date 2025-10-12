@@ -7,13 +7,15 @@ export const Colors: TColors = {
     text: '#4b4b4b',
     background: White,
     border: '#e5e5e5',
-    red: '#FF4B4B'
+    red: '#FF4B4B',
+    backgroundHide: 'rgb(0, 0, 0, .3)'
   },
   dark: {
     text: '#f1f7fb',
     background: '#131f24',
     border: '#37464f',
-    red: '#EE5555'
+    red: '#EE5555',
+    backgroundHide: 'rgb(0, 0, 0, .4)'
   },
 };
 

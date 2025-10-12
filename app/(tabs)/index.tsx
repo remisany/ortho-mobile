@@ -11,7 +11,7 @@ export default function HomeScreen() {
     <ThemedView>    
 
       <ButtonGame
-        onPress={() => router.push("/intruder")}
+        onPress={() => router.replace("/intruder")}
       />
 
     </ThemedView>

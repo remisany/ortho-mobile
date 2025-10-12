@@ -2,6 +2,7 @@ import ButtonText from '@/components/ButtonText';
 import { ThemedText } from '@/components/ThemedText';
 import { btnHeight, fontSizeL, fontSizeText, marginL, marginM, marginS } from '@/constants/Common';
 import { TUrl } from '@/constants/Definitions';
+import useBack from '@/hooks/useBack';
 import { button } from '@/locales/fr/button';
 import { title } from '@/locales/fr/title';
 import { useRouter } from 'expo-router';
@@ -13,6 +14,7 @@ interface IInstruction {
 }
 
 export default function Instruction({ url, instruction }: IInstruction) {
+  useBack();
   const router = useRouter();
   
   return (

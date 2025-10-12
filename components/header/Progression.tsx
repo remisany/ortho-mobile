@@ -19,7 +19,6 @@ export default function Progression({ color }: IProgression) {
     return width;
   }, [progression])
 
-
   return (
     <View style={[styles.container, {backgroundColor: color.border}]}>
       <View style={[

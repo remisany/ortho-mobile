@@ -1,3 +1,4 @@
+import BottomSheet from '@/components/BottomSheet';
 import { ThemedView } from '@/components/ThemedView';
 import Header from '@/components/header/Header';
 import { ProgressionProvider } from '@/lib/context';
@@ -14,6 +15,8 @@ export default function GameLayout() {
                 <View style={styles.container}>
                     <Slot/>
                 </View>
+
+                <BottomSheet/>
             </ThemedView>
         </ProgressionProvider>
     )
